@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-04-25T15:59:56 IST" name="Default suite" finished-at="2026-04-25T16:08:15 IST" duration-ms="498850">
+    <groups>
+    </groups>
+    <test started-at="2026-04-25T15:59:56 IST" name="Default test" finished-at="2026-04-25T16:08:15 IST" duration-ms="498850">
+      <class name="Farm2Me.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T15:59:56 IST" name="setUp" finished-at="2026-04-25T16:00:23 IST" duration-ms="27589" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateLoginPageFields()[pri:1, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:00:23 IST" name="validateLoginPageFields" finished-at="2026-04-25T16:00:42 IST" duration-ms="18415" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLoginPageFields -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:00:42 IST" name="tearDown" finished-at="2026-04-25T16:00:42 IST" duration-ms="264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:00:43 IST" name="setUp" finished-at="2026-04-25T16:01:33 IST" duration-ms="50040" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginDataDrivenTest(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:01:33 IST" name="loginDataDrivenTest" data-provider="loginData" finished-at="2026-04-25T16:02:13 IST" duration-ms="39958" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1.23456789E9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Manjuurs@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginDataDrivenTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:02:13 IST" name="tearDown" finished-at="2026-04-25T16:02:13 IST" duration-ms="228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:02:13 IST" name="setUp" finished-at="2026-04-25T16:02:55 IST" duration-ms="41807" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginDataDrivenTest(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:02:55 IST" name="loginDataDrivenTest" data-provider="loginData" finished-at="2026-04-25T16:03:21 IST" duration-ms="26543" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1.23456789E9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrongpass]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginDataDrivenTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:03:21 IST" name="tearDown" finished-at="2026-04-25T16:03:22 IST" duration-ms="230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:03:22 IST" name="setUp" finished-at="2026-04-25T16:06:35 IST" duration-ms="193395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginDataDrivenTest(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:06:35 IST" name="loginDataDrivenTest" data-provider="loginData" finished-at="2026-04-25T16:06:46 IST" duration-ms="10515" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9.739706253E9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Manjuurs@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginDataDrivenTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:06:46 IST" name="tearDown" finished-at="2026-04-25T16:06:46 IST" duration-ms="319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:06:46 IST" name="setUp" finished-at="2026-04-25T16:07:34 IST" duration-ms="48289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testValidLogin()[pri:3, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:07:34 IST" name="testValidLogin" finished-at="2026-04-25T16:08:14 IST" duration-ms="40054" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Farm2Me.LoginTest@2de23121]" started-at="2026-04-25T16:08:14 IST" name="tearDown" finished-at="2026-04-25T16:08:15 IST" duration-ms="354" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Farm2Me.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
