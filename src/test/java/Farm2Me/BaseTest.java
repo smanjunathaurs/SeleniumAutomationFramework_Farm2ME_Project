@@ -2,32 +2,45 @@ package Farm2Me;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
+
+import java.util.HashMap;
 
 public class BaseTest {
 
-	protected WebDriver driver;
-	protected String baseUrl = "https://farm2me-dev.azurewebsites.net/login";
+    protected static WebDriver driver;
 
-	@BeforeMethod
-	public void setUp() throws InterruptedException {
+    @BeforeSuite
+    public void setup() {
 
-		System.setProperty("webdriver.chrome.driver", "E:/Farm2Me Live Project - Automation Testing/eclipse-workspace/Farm2Me/CromeDriver/chromedriver.exe");
-		driver = new ChromeDriver();
-		Thread.sleep(5000);       
-		driver.manage().window().maximize();
-		Thread.sleep(5000);
-		driver.get(baseUrl);
-		Thread.sleep(5000);
-	}
+        ChromeOptions options = new ChromeOptions();
 
-	@AfterTest
-	public void tearDown() throws InterruptedException
-	{
-		Thread.sleep(5000);
-		driver.quit();
-	}
+        // 🔥 Disable autofill + suggestions
+        HashMap<String, Object> prefs = new HashMap<>();
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+        prefs.put("autofill.profile_enabled", false);
+        prefs.put("autofill.credit_card_enabled", false);
 
+        options.setExperimentalOption("prefs", prefs);
+
+        // 🔥 Fresh browser profile
+
+        driver = new ChromeDriver(options);
+
+        driver.manage().window().maximize();
+
+        driver.get("https://farm2me-dev.azurewebsites.net/login");
+
+        // 🔥 Clear all data
+        driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
+    }
+
+    @AfterSuite
+    public void tearDown() {
+        driver.quit();
+    }
 }
-
-

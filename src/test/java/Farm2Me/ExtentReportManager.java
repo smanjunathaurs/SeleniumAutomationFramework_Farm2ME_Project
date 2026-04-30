@@ -18,8 +18,8 @@ public class ExtentReportManager {
             extent = new ExtentReports();
             extent.attachReporter(spark);
 
-            extent.setSystemInfo("Tester", "Manjunatha");
-            extent.setSystemInfo("Environment", "QA");
+            extent.setSystemInfo("Tester", "S.Manjunatha Raje Urs");
+            extent.setSystemInfo("Environment", "QA Tester");
 
         }
 

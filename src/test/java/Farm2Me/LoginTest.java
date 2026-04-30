@@ -5,7 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -21,12 +21,11 @@ public class LoginTest extends BaseTest {
 		return ExcelUtil.getTestData(path, "LoginData");
 	}
 
-
+	//***************************************************************************************************************
 	@Test(priority = 2, dataProvider = "loginData")
 	public void loginDataDrivenTest(String username, String password, String expectedResult) throws InterruptedException {
-		System.out.println("Running with: " + username + " | " + password + " | " + expectedResult);
 
-		// ✅ Reset page every iteration
+		driver.manage().deleteAllCookies();   // 🔥 ADD
 		driver.get("https://farm2me-dev.azurewebsites.net/login");
 
 		POM_LoginPage loginPage = new POM_LoginPage(driver);
@@ -36,43 +35,33 @@ public class LoginTest extends BaseTest {
 		loginPage.enterPassword(password);
 		Thread.sleep(2000);
 		loginPage.clickLogin();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
-		// 🔥 ADD FROM HERE
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		try {
-
 			if (expectedResult.equalsIgnoreCase("Invalid")) {
 
-				Thread.sleep(2000); // temporary wait
+				Thread.sleep(2000);  // wait for error
 
-
-				boolean isStillOnLoginPage = driver.getCurrentUrl().contains("login");
-
-				//  Use POM method instead of driver
 				boolean isErrorDisplayed = loginPage.isErrorDisplayed();
 
+				Assert.assertTrue(isErrorDisplayed, "Expected error not displayed");
 
-
-				if (isStillOnLoginPage || isErrorDisplayed) {
-					System.out.println("✅ Invalid login handled correctly for: " + username);
-				} else {
-					Assert.fail("❌ Invalid test failed - user logged in unexpectedly");
-				}
+				System.out.println("Invalid login handled correctly");
 
 			} else {
 
 				wait.until(ExpectedConditions.titleContains("Farm2Me"));
+
 				Assert.assertEquals(driver.getTitle(), "Farm2Me");
 
-				System.out.println("✅ Valid login success for: " + username);
+				System.out.println("Valid login success");
+
 			}
 
 		} catch (Exception e) {
-			System.out.println("❌ Failure for: " + username);
-			e.printStackTrace();
-			Assert.fail();
+			Assert.fail("Test failed: " + e.getMessage());
 		}
 	}
 	//*****************************************************************************************************************
@@ -99,11 +88,32 @@ public class LoginTest extends BaseTest {
 		Assert.assertTrue(loginPage.isloginButtonDisplayed(), "SignIn is displayed");
 		Thread.sleep(3000);
 
-		System.out.println("All fields are present ✅");
+		System.out.println("All fields are present");
 	}
 
 	/********************************************************************************************************************************/
 	@Test(priority = 3)
+	public void testLoginWithBlankFields() throws InterruptedException {
+
+		driver.manage().deleteAllCookies();
+		driver.get("https://farm2me-dev.azurewebsites.net/login");
+
+		POM_LoginPage loginPage = new POM_LoginPage(driver);
+
+		// Leave fields empty and click login
+		loginPage.clickLogin();
+
+		Thread.sleep(5000); // wait for validation
+
+		// Validate error (same logic already used)
+		boolean isStillOnLoginPage = driver.getCurrentUrl().contains("login");
+
+		Assert.assertTrue(isStillOnLoginPage, "Login should not proceed with blank fields");
+		System.out.println("Blank fields validation working correctly");
+	}
+
+	//***************************************************************************************************************************
+	@Test(priority = 4)
 	public void testValidLogin() throws InterruptedException {
 		POM_LoginPage loginPage = new POM_LoginPage(driver);
 		loginPage.enterUsername("9739706253");
@@ -118,10 +128,10 @@ public class LoginTest extends BaseTest {
 		Thread.sleep(5000);
 
 		if (loginPage.waitForErrorMessage()) {
-			System.out.println("Error message displayed ✅");
+			System.out.println("Error message displayed");
 		}
 
-		// 🔥 simple clear + enter valid password -  clear and enter valid password
+		// simple clear + enter valid password -  clear and enter valid password
 
 		if (loginPage.waitForErrorMessage()) {
 			loginPage.clearAndEnterValidPassword("Manjuurs@123");
@@ -140,24 +150,13 @@ public class LoginTest extends BaseTest {
 
 		String	act_title = driver.getTitle();// to capture the title
 
-		if(act_title.equals("Farm2Me"))    // compare the captured title with the actual title given.
-		{
-			System.out.println("Title present: Test is passed");
-		}
-		else
-		{
-			System.out.println("Title present: Test is Failed");
-		}
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait1.until(ExpectedConditions.titleContains("Farm2Me"));
 
+		Assert.assertEquals(driver.getTitle(), "Farm2Me");  // ✅ ADD HERE
 		Thread.sleep(3000);
-		System.out.println("Navigate to HomePage Sucessfully ✅");
+		System.out.println("Navigate to HomePage Sucessfully");
 
-	}
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
 	}
 }
-
-
 
