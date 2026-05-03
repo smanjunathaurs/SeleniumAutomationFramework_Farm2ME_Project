@@ -1,20 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
 
-<suite name="Farm2Me Suite">
-
-    <!-- 🔥 Extent Report Listener -->
-    <listeners>
-        <listener class-name="listeners.TestListener"/>
-    </listeners>
-
-    <test name="Login Tests">
-
-        <classes>
-            <!-- Only your actual test class -->
-            <class name="Farm2Me_Login.LoginTest"/>
-        </classes>
-
-    </test>
+  <test name="Login Tests">
+    <classes>
+      <class name="Farm2Me.LoginTest"/>
+    </classes>
+  </test>
 
 </suite>

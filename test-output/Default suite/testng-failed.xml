@@ -5,9 +5,10 @@
     <classes>
       <class name="Farm2Me.LoginTest">
         <methods>
+          <include name="loginDataDrivenTest" invocation-numbers="0"/>
           <include name="tearDown"/>
+          <include name="validateLoginPageFields"/>
           <include name="setup"/>
-          <include name="testLoginWithBlankFields"/>
         </methods>
       </class> <!-- Farm2Me.LoginTest -->
     </classes>

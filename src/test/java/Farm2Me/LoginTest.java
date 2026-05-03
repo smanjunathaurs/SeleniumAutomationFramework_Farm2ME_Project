@@ -5,11 +5,9 @@ import java.time.Duration;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 
 @Listeners(Farm2Me.ListenerClassDemo.class)
 public class LoginTest extends BaseTest {  
@@ -21,7 +19,7 @@ public class LoginTest extends BaseTest {
 		return ExcelUtil.getTestData(path, "LoginData");
 	}
 
-	//***************************************************************************************************************
+	//********************************************************************************************************************************
 	@Test(priority = 2, dataProvider = "loginData")
 	public void loginDataDrivenTest(String username, String password, String expectedResult) throws InterruptedException {
 
@@ -64,7 +62,7 @@ public class LoginTest extends BaseTest {
 			Assert.fail("Test failed: " + e.getMessage());
 		}
 	}
-	//*****************************************************************************************************************
+	//********************************************************************************************************************************
 
 	@Test(priority = 1)
 	public void validateLoginPageFields() throws InterruptedException {
@@ -91,7 +89,7 @@ public class LoginTest extends BaseTest {
 		System.out.println("All fields are present");
 	}
 
-	/********************************************************************************************************************************/
+	//********************************************************************************************************************************
 	@Test(priority = 3)
 	public void testLoginWithBlankFields() throws InterruptedException {
 
@@ -111,9 +109,31 @@ public class LoginTest extends BaseTest {
 		Assert.assertTrue(isStillOnLoginPage, "Login should not proceed with blank fields");
 		System.out.println("Blank fields validation working correctly");
 	}
-
-	//***************************************************************************************************************************
+	//********************************************************************************************************************************
 	@Test(priority = 4)
+	public void testLoginWithOnlyPassword() throws InterruptedException {
+
+		driver.manage().deleteAllCookies();
+		driver.get("https://farm2me-dev.azurewebsites.net/login");
+
+		POM_LoginPage loginPage = new POM_LoginPage(driver);
+
+		// Leave username blank
+		loginPage.enterPassword("Manjuurs@123");
+
+		loginPage.clickLogin();
+
+		Thread.sleep(2000);
+
+		boolean isStillOnLoginPage = driver.getCurrentUrl().contains("login");
+
+		Assert.assertTrue(isStillOnLoginPage, 
+				"Login should not proceed when username is blank");
+
+		System.out.println("Username blank validation working correctly");
+	}
+	//*******************************************************************************************************************************
+	@Test(priority = 5)
 	public void testValidLogin() throws InterruptedException {
 		POM_LoginPage loginPage = new POM_LoginPage(driver);
 		loginPage.enterUsername("9739706253");
@@ -143,17 +163,14 @@ public class LoginTest extends BaseTest {
 		loginPage.closePopupIfPresent();
 		Thread.sleep(5000);
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		//**********************************************************************************************
-
 		//Validate Title should be Farm2Me
 
-		String	act_title = driver.getTitle();// to capture the title
+		driver.getTitle();
 
 		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait1.until(ExpectedConditions.titleContains("Farm2Me"));
 
-		Assert.assertEquals(driver.getTitle(), "Farm2Me");  // ✅ ADD HERE
+		Assert.assertEquals(driver.getTitle(), "Farm2Me");  //  ADD HERE
 		Thread.sleep(3000);
 		System.out.println("Navigate to HomePage Sucessfully");
 

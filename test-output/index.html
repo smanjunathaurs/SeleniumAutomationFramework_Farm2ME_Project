@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\ManjunathaUrs\AppData\Local\Temp\testng-eclipse--1401128648\testng-customsuite.xml</span>
+                    <span>C:\Users\ManjunathaUrs\AppData\Local\Temp\testng-eclipse-1217536377\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">7 methods,   7 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +103,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Farm2Me.LoginTest" class="method navigator-link" hash-for-method="loginDataDrivenTest(9.739706253E9, Manjuurs@123, Valid)">loginDataDrivenTest(9.739706253E9, Manjuurs@123, Valid)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Farm2Me.LoginTest" class="method navigator-link" hash-for-method="loginDataDrivenTest(1.23456789E9, Manjuurs@123, Invalid)">loginDataDrivenTest(1.23456789E9, Manjuurs@123, Invalid)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Farm2Me.LoginTest" class="method navigator-link" hash-for-method="loginDataDrivenTest(1.23456789E9, Manjuurs@123, Invalid)">loginDataDrivenTest(1.23456789E9, Manjuurs@123, Invalid)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Farm2Me.LoginTest" class="method navigator-link" hash-for-method="loginDataDrivenTest(9.739706253E9, Manjuurs@123, Valid)">loginDataDrivenTest(9.739706253E9, Manjuurs@123, Valid)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -119,6 +119,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="Farm2Me.LoginTest" class="method navigator-link" hash-for-method="testLoginWithBlankFields">testLoginWithBlankFields</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Farm2Me.LoginTest" class="method navigator-link" hash-for-method="testLoginWithOnlyPassword">testLoginWithOnlyPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -151,18 +156,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginDataDrivenTest(9.739706253E9, Manjuurs@123, Valid)">
-                  </a> <!-- loginDataDrivenTest(9.739706253E9, Manjuurs@123, Valid) -->
-                  <span class="method-name">loginDataDrivenTest</span>
-                  <span class="parameters">(9.739706253E9,Manjuurs@123,Valid)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="loginDataDrivenTest(1.23456789E9, Manjuurs@123, Invalid)">
                   </a> <!-- loginDataDrivenTest(1.23456789E9, Manjuurs@123, Invalid) -->
                   <span class="method-name">loginDataDrivenTest</span>
                   <span class="parameters">(1.23456789E9,Manjuurs@123,Invalid)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginDataDrivenTest(9.739706253E9, Manjuurs@123, Valid)">
+                  </a> <!-- loginDataDrivenTest(9.739706253E9, Manjuurs@123, Valid) -->
+                  <span class="method-name">loginDataDrivenTest</span>
+                  <span class="parameters">(9.739706253E9,Manjuurs@123,Valid)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -178,6 +183,13 @@
                   <a name="testLoginWithBlankFields">
                   </a> <!-- testLoginWithBlankFields -->
                   <span class="method-name">testLoginWithBlankFields</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLoginWithOnlyPassword">
+                  </a> <!-- testLoginWithOnlyPassword -->
+                  <span class="method-name">testLoginWithOnlyPassword</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -199,7 +211,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ManjunathaUrs\AppData\Local\Temp\testng-eclipse--1401128648\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ManjunathaUrs\AppData\Local\Temp\testng-eclipse-1217536377\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -248,31 +260,35 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testValidLogin')
 data.setCell(0, 2, 'Farm2Me.LoginTest')
-data.setCell(0, 3, 39183);
+data.setCell(0, 3, 39186);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'validateLoginPageFields')
 data.setCell(1, 2, 'Farm2Me.LoginTest')
-data.setCell(1, 3, 18305);
+data.setCell(1, 3, 18297);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'loginDataDrivenTest')
 data.setCell(2, 2, 'Farm2Me.LoginTest')
-data.setCell(2, 3, 10195);
+data.setCell(2, 3, 10291);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'loginDataDrivenTest')
 data.setCell(3, 2, 'Farm2Me.LoginTest')
-data.setCell(3, 3, 10121);
+data.setCell(3, 3, 10267);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'loginDataDrivenTest')
 data.setCell(4, 2, 'Farm2Me.LoginTest')
-data.setCell(4, 3, 8709);
+data.setCell(4, 3, 8079);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'testLoginWithBlankFields')
 data.setCell(5, 2, 'Farm2Me.LoginTest')
-data.setCell(5, 3, 8027);
+data.setCell(5, 3, 6824);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testLoginWithOnlyPassword')
+data.setCell(6, 2, 'Farm2Me.LoginTest')
+data.setCell(6, 3, 4935);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -310,31 +326,35 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">validateLoginPageFields</span>
-                <span class="method-start">4589 ms</span>
+                <span class="method-start">35816 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginDataDrivenTest(1.23456789E9, Manjuurs@123, Invalid)</span>
-                <span class="method-start">24087 ms</span>
+                <span class="method-start">55159 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginDataDrivenTest(1.23456789E9, wrongpass, Invalid)</span>
-                <span class="method-start">34408 ms</span>
+                <span class="method-start">65566 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginDataDrivenTest(9.739706253E9, Manjuurs@123, Valid)</span>
-                <span class="method-start">44672 ms</span>
+                <span class="method-start">75999 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testLoginWithBlankFields</span>
-                <span class="method-start">53518 ms</span>
+                <span class="method-start">84214 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLoginWithOnlyPassword</span>
+                <span class="method-start">91175 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testValidLogin</span>
-                <span class="method-start">61695 ms</span>
+                <span class="method-start">96244 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">101982 ms</span>
+                <span class="method-start">136512 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
