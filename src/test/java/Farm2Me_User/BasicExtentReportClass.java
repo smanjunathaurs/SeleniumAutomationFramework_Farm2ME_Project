@@ -1,4 +1,4 @@
-package Farm2Me;
+package Farm2Me_User;
 
 import org.testng.ITestResult;
 import org.testng.SkipException;

@@ -1,4 +1,4 @@
-package Farm2Me;
+package Farm2Me_User;
 
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;

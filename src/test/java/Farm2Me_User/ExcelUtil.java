@@ -1,4 +1,4 @@
-package Farm2Me;
+package Farm2Me_User;
 
 import java.io.FileInputStream;
 import java.io.IOException;
